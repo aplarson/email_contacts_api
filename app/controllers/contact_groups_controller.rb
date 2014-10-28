@@ -1,7 +1,7 @@
 class ContactGroupsController < ApplicationController
   
   def index
-    render json: ContactGroup.all
+    render json: ContactGroup.where('owner_id = ?', params[:user_id])
   end
   
   def create
