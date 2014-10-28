@@ -33,7 +33,8 @@ class ContactGroupsController < ApplicationController
   end
   
   def show
-    render json: ContactGroup.find(params[:id])
+    group = ContactGroup.find(params[:id])
+    render json: { group.name => group.contacts }
   end
   
   private
