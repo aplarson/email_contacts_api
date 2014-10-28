@@ -19,7 +19,7 @@ class ContactGroupMembershipsController < ApplicationController
   
   private
   def params_helper
-    params.permit(:group_id, :contact_id)
+    params.require(:group_membership).permit(:group_id, :contact_id)
   end
   
 end

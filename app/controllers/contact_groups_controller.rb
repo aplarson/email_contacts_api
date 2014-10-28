@@ -39,6 +39,6 @@ class ContactGroupsController < ApplicationController
   
   private
   def param_helper
-    params.permit(:owner_id, :name)
+    params.require(:contact_group).permit(:owner_id, :name)
   end
 end
